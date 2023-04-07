@@ -1,6 +1,6 @@
 // Insert your code here
 
-const requestAPI = "http://localhost:3000";
+const requestAPI = "https://weather-back.vercel.app";
 
 function doRegister() {
   const name = document.querySelector("#registerName").value;

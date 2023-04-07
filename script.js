@@ -1,6 +1,7 @@
-const requestAPI = "https://vercel.com/deedoo64/weather-back";
+// const API="https://vercel.com/deedoo64/weather-back/"
+const API = "http://localhost:3000/weather/";
 
-fetch(requestAPI + "/weather")
+fetch(API)
   .then((response) => response.json())
   .then((data) => {
     if (data.weather) {
@@ -28,7 +29,7 @@ function updateDeleteCityEventListener() {
     document
       .querySelectorAll(".deleteCity")
       [i].addEventListener("click", function () {
-        fetch(requestAPI + "/weather/" + this.id, { method: "DELETE" })
+        fetch(API + this.id, { method: "DELETE" })
           .then((response) => response.json())
           .then((data) => {
             if (data.result) {
@@ -42,7 +43,7 @@ function updateDeleteCityEventListener() {
 document.querySelector("#addCity").addEventListener("click", function () {
   const cityName = document.querySelector("#cityNameInput").value;
 
-  fetch(requestAPI + "/weather", {
+  fetch(API, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ cityName }),

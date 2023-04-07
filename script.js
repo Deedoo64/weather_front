@@ -1,5 +1,5 @@
-// const API="https://vercel.com/deedoo64/weather-back/"
-const API = "http://localhost:3000/weather/";
+const API = "https://vercel.com/deedoo64/weather-back/";
+// const API = "http://localhost:3000/weather/";
 
 fetch(API)
   .then((response) => response.json())
